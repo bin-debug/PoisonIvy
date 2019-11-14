@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Couchbase.Core;
+using Couchbase.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PoisonIvy.CatalogApi.Controllers
@@ -9,6 +11,14 @@ namespace PoisonIvy.CatalogApi.Controllers
     [Route("api/[controller]")]
     public class CatalogController : Controller
     {
+        private readonly IBucket _bucket;
+
+        public CatalogController(IBucketProvider bucketProvider)
+        {
+            string database = Environment.GetEnvironmentVariable("DatabaseName");
+            _bucket = bucketProvider.GetBucket(database);
+        }
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
