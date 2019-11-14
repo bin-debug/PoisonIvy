@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Ocelot.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace PoisonIvy.GatewayApi
 {
@@ -28,6 +29,11 @@ namespace PoisonIvy.GatewayApi
         {
             services.AddControllers();
             services.AddOcelot(Configuration);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Gateway Microservice", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +53,12 @@ namespace PoisonIvy.GatewayApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gateway Microservice V1");
             });
         }
     }
