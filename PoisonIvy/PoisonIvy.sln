@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{43AE1A75-3585-42DE-88D7-39F013B6DBF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonIvy.GatewayApi", "GatewayApi\PoisonIvy.GatewayApi\PoisonIvy.GatewayApi.csproj", "{93834A14-8E5D-4C54-A4B5-6C8698B80C9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoisonIvy.GatewayApi", "GatewayApi\PoisonIvy.GatewayApi\PoisonIvy.GatewayApi.csproj", "{93834A14-8E5D-4C54-A4B5-6C8698B80C9B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{FED2139A-4CBD-4FCE-B812-CF98414B2E66}"
 EndProject
@@ -17,11 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{5F9EDE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{ED1BFE19-32FE-4BCD-9BCB-51BB083F8382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonIvy.BasketApi", "Services\Basket\PoisonIvy.BasketApi\PoisonIvy.BasketApi.csproj", "{53B520BD-138B-4311-95AE-C811A0D92EA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoisonIvy.BasketApi", "Services\Basket\PoisonIvy.BasketApi\PoisonIvy.BasketApi.csproj", "{53B520BD-138B-4311-95AE-C811A0D92EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonIvy.CatalogApi", "Services\Catalog\PoisonIvy.CatalogApi\PoisonIvy.CatalogApi.csproj", "{AA72989F-B58D-4021-B7FD-349652FFBB98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoisonIvy.CatalogApi", "Services\Catalog\PoisonIvy.CatalogApi\PoisonIvy.CatalogApi.csproj", "{AA72989F-B58D-4021-B7FD-349652FFBB98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonIvy.OrderingApi", "Services\Ordering\PoisonIvy.OrderingApi\PoisonIvy.OrderingApi.csproj", "{7AEDE06B-7C80-4C08-B124-A25A497CCB60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoisonIvy.OrderingApi", "Services\Ordering\PoisonIvy.OrderingApi\PoisonIvy.OrderingApi.csproj", "{7AEDE06B-7C80-4C08-B124-A25A497CCB60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4CCF84BC-1C84-4A28-97BA-90062B564915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonIvy.Domain.Core", "Infrastructure\Core\PoisonIvy.Domain.Core\PoisonIvy.Domain.Core.csproj", "{19C6F7EE-0CC0-4A6E-AC56-FC813F697D7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{7AEDE06B-7C80-4C08-B124-A25A497CCB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AEDE06B-7C80-4C08-B124-A25A497CCB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AEDE06B-7C80-4C08-B124-A25A497CCB60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C6F7EE-0CC0-4A6E-AC56-FC813F697D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C6F7EE-0CC0-4A6E-AC56-FC813F697D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C6F7EE-0CC0-4A6E-AC56-FC813F697D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C6F7EE-0CC0-4A6E-AC56-FC813F697D7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,8 @@ Global
 		{53B520BD-138B-4311-95AE-C811A0D92EA1} = {5F9EDEB7-5CB0-45F7-9928-C48CC243EFC3}
 		{AA72989F-B58D-4021-B7FD-349652FFBB98} = {FED2139A-4CBD-4FCE-B812-CF98414B2E66}
 		{7AEDE06B-7C80-4C08-B124-A25A497CCB60} = {ED1BFE19-32FE-4BCD-9BCB-51BB083F8382}
+		{4CCF84BC-1C84-4A28-97BA-90062B564915} = {AC0AA8CE-EAFB-40B8-837E-F93F7387D69D}
+		{19C6F7EE-0CC0-4A6E-AC56-FC813F697D7A} = {4CCF84BC-1C84-4A28-97BA-90062B564915}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2457E0D1-BE48-4915-B7EE-E2A15880DE56}
