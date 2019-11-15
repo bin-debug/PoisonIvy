@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PoisonIvy.BasketApi.Domain.CommandHandlers;
+using PoisonIvy.BasketApi.Domain.Commands;
 using PoisonIvy.IoC;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -56,11 +58,13 @@ namespace PoisonIvy.BasketApi
 
             services.AddMediatR(typeof(Startup));
             RegisterServices(services);
+
         }
 
         private void RegisterServices(IServiceCollection services)
         {
             DependencyContainer.RegisterServices(services);
+            services.AddTransient<IRequestHandler<CreateCatalogItemCommand, bool>, CatalogItemCommandHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

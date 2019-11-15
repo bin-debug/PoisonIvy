@@ -13,7 +13,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Infrastructure\IoC\PoisonIvy.IoC\PoisonIvy.IoC.csproj" />
-    <ProjectReference Include="..\Domain\PoisonIvy.Catalog.Domain\PoisonIvy.Catalog.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\CommandHandlers\" />
+    <Folder Include="Domain\Commands\" />
   </ItemGroup>
 
 </Project>

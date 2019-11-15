@@ -12,6 +12,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PoisonIvy.CatalogApi.Domain.EventHandlers;
+using PoisonIvy.CatalogApi.Domain.Events;
+using PoisonIvy.CatalogApi.Domain.Interfaces;
+using PoisonIvy.CatalogApi.Domain.Models;
+using PoisonIvy.CatalogApi.Domain.Repository;
+using PoisonIvy.Domain.Core.EventBus;
 using PoisonIvy.IoC;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -53,14 +59,18 @@ namespace PoisonIvy.CatalogApi
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Catalog Microservice", Version = "v1" });
             });
-
+                        
             services.AddMediatR(typeof(Startup));
             RegisterServices(services);
+
+            services.AddTransient<IRepository<CatalogItem>, CatalogItemRepository>();
         }
 
         private void RegisterServices(IServiceCollection services)
         {
             DependencyContainer.RegisterServices(services);
+            services.AddTransient<CatalogItemEventHandler>();
+            services.AddTransient<IEventHandler<CatalogItemCreatedEvent>, CatalogItemEventHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,6 +97,14 @@ namespace PoisonIvy.CatalogApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog Microservice V1");
             });
+
+            ConfigureEventBus(app);
+        }
+
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<CatalogItemCreatedEvent, CatalogItemEventHandler>();
         }
     }
 }

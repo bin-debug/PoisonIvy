@@ -15,4 +15,10 @@
     <ProjectReference Include="..\..\..\Infrastructure\IoC\PoisonIvy.IoC\PoisonIvy.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\EventHandlers\" />
+    <Folder Include="Domain\Interfaces\" />
+    <Folder Include="Domain\Repository\" />
+  </ItemGroup>
+
 </Project>

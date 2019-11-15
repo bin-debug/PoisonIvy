@@ -1,0 +1,12 @@
+
+--Docker related--
+docker run -d --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase:community-6.0.0
+http://localhost:8091 
+
+--RabbitMQ related--
+docker run -d -p 15672:15672 -p 5672:5672 --hostname rabbit-service-bus --name service-bus rabbitmq:management
+
+--Couchbase related--
+CREATE PRIMARY INDEX `catalog-primary-index` ON `catalog` USING GSI;
+
+

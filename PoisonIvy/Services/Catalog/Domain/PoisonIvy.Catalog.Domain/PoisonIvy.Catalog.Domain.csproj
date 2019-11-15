@@ -5,11 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Commands\" />
-    <Folder Include="CommandHandlers\" />
-    <Folder Include="Events\" />
-    <Folder Include="EventHandlers\" />
+    <Compile Remove="CommandHandlers\**" />
+    <Compile Remove="Commands\**" />
+    <Compile Remove="EventHandlers\**" />
+    <Compile Remove="Events\**" />
+    <EmbeddedResource Remove="CommandHandlers\**" />
+    <EmbeddedResource Remove="Commands\**" />
+    <EmbeddedResource Remove="EventHandlers\**" />
+    <EmbeddedResource Remove="Events\**" />
+    <None Remove="CommandHandlers\**" />
+    <None Remove="Commands\**" />
+    <None Remove="EventHandlers\**" />
+    <None Remove="Events\**" />
   </ItemGroup>
 
 </Project>
