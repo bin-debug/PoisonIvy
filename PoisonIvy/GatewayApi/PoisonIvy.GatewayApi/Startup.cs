@@ -10,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Ocelot.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace PoisonIvy.GatewayApi
@@ -28,11 +27,10 @@ namespace PoisonIvy.GatewayApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddOcelot(Configuration);
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Gateway Microservice", Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Gateway API", Version = "v1" });
             });
         }
 

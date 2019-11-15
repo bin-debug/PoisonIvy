@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using MediatR;
 using PoisonIvy.RabbitMQ;
+using Microsoft.Extensions.Configuration;
 
 namespace PoisonIvy.IoC
 {

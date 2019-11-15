@@ -51,7 +51,7 @@ namespace PoisonIvy.BasketApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Basket Microservice", Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Basket Microservice", Version = "v1" });
             });
 
             services.AddMediatR(typeof(Startup));
