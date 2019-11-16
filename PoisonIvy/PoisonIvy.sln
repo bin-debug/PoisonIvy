@@ -40,6 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{1E01
 		SimpleScripts.txt = SimpleScripts.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosionIvy.Gateway", "PosionIvy.Gateway\PosionIvy.Gateway.csproj", "{2DDD3D72-2733-408C-8A47-DA3378ECF577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{9008874A-3EF0-4BF7-BFB3-A5B84CF761F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9008874A-3EF0-4BF7-BFB3-A5B84CF761F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9008874A-3EF0-4BF7-BFB3-A5B84CF761F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDD3D72-2733-408C-8A47-DA3378ECF577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDD3D72-2733-408C-8A47-DA3378ECF577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDD3D72-2733-408C-8A47-DA3378ECF577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDD3D72-2733-408C-8A47-DA3378ECF577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{B68BBB75-97F2-49D9-99DB-25D2D84147EC} = {A0682A9A-13A4-4C2C-BE61-728F9C83982A}
 		{6938A7AF-FAB9-4F03-A239-381DE5408A12} = {AC0AA8CE-EAFB-40B8-837E-F93F7387D69D}
 		{9008874A-3EF0-4BF7-BFB3-A5B84CF761F0} = {6938A7AF-FAB9-4F03-A239-381DE5408A12}
+		{2DDD3D72-2733-408C-8A47-DA3378ECF577} = {6925E5EC-6ADA-42A9-9696-ADA0DE7C81DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2457E0D1-BE48-4915-B7EE-E2A15880DE56}

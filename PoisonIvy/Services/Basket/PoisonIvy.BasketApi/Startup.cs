@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Consul;
 using Couchbase.Extensions.DependencyInjection;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +32,7 @@ namespace PoisonIvy.BasketApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddConsulConfig(Configuration);
             services.AddControllers();
 
             string ASPNETCORE_ENVIRONMENT = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -75,6 +77,7 @@ namespace PoisonIvy.BasketApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseConsul();
             app.UseHttpsRedirection();
 
             app.UseRouting();

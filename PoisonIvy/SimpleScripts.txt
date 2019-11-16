@@ -9,4 +9,7 @@ docker run -d -p 15672:15672 -p 5672:5672 --hostname rabbit-service-bus --name s
 --Couchbase related--
 CREATE PRIMARY INDEX `catalog-primary-index` ON `catalog` USING GSI;
 
+--Consul related--
+docker run -d -p 8500:8500 consul:latest
+
 
